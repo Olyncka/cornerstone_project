@@ -1,5 +1,4 @@
 <div>
-
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
@@ -13,20 +12,31 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Horizontal</strong> Form
+                    <strong>Ajouter une Residence</strong>
                 </div>
                 <form wire:submit.prevent="addResidence()" class="form-horizontal">
                     <div class="card-body card-block">
+                        <div class="form-group">
+                            <label for="name" class=" form-control-label">Name</label>
+                            <input type="text" id="name" wire:model="name" placeholder="Enter the Residence Name." wire:keyup="generateslug" class="form-control @error('name') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                @error('name'){{ $message }}@enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="slug" class=" form-control-label">slug</label>
+                            <input type="text" id="name" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                @error('slug'){{ $message }}@enderror
+                            </div>
+                        </div>
                         <div class="row form-group">
                             <div class="col col-md-3">
-                                <label for="name" class=" form-control-label">Name</label>
+                                <label for="adresse" class=" form-control-label">Adresse</label>
                             </div>
-                            <div class="col-12 col-md-9">
-                                <input type="text" id="name" wire:model="name" placeholder="Enter the Residence Name." class="form-control @error('name') is-invalid @enderror">
-                                {{-- <span class="help-block"></span> --}}
-                                <div class="invalid-feedback">
-                                    @error('name'){{ $message }}@enderror
-                                </div>
+                            <input type="text" id="name" wire:model="adresse" placeholder="Enter the Residence Adresse" class="form-control @error('adresse') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                @error('adresse'){{ $message }}@enderror
                             </div>
                         </div>
                         <div class="row form-group">
@@ -34,7 +44,7 @@
                                 <label for="adresse" class=" form-control-label">Adresse</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <textarea id="adresse" cols="30" rows="10" class="form-control"></textarea>
+                                <textarea id="description" cols="30" rows="10" wire:model="description" class="form-control"></textarea>
                                 <span class="help-block"></span>
                             </div>
                         </div>
@@ -51,7 +61,6 @@
             </div>
         </div>
     </div>
-
 </div>
 @push('scripts')
 <script>

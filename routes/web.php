@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Livewire\Admin\DashbordComponent;
-use App\Http\Livewire\Admin\ResidenceAdd;
 use App\Http\Livewire\Admin\ResidenceAddComponent;
 use App\Http\Livewire\Admin\ResidenceListComponent;
 use App\Http\Livewire\Home;
@@ -23,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashbord',DashbordComponent::class)->name('dashbord');
-Route::get('/residence/add',ResidenceAdd::class)->name('residence.add');
+Route::get('/residence/add',ResidenceAddComponent::class)->name('residence.add');
 Route::get('/residence/list',ResidenceListComponent::class)->name('residence.list');
 
 Route::get('/home',Home::class);

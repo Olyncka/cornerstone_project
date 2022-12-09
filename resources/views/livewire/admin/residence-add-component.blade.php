@@ -25,28 +25,29 @@
                         </div>
                         <div class="form-group">
                             <label for="slug" class=" form-control-label">slug</label>
-                            <input type="text" id="name" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
+                            <input type="text" id="slug" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('slug'){{ $message }}@enderror
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="adresse" class=" form-control-label">Adresse</label>
+                        <div class="form-group">
+                            <label for="image" class=" form-control-label">Image</label>
+                            <input type="file" id="image" wire:model="image" placeholder="Enter the Residence Image" class="form-control @error('image') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                @error('image'){{ $message }}@enderror
                             </div>
-                            <input type="text" id="name" wire:model="adresse" placeholder="Enter the Residence Adresse" class="form-control @error('adresse') is-invalid @enderror">
+                        </div>
+                        <div class="form-group">
+                            <label for="adresse" class=" form-control-label">Adresse</label>
+                            <input type="text" id="adresse" wire:model="adresse" placeholder="Enter the Residence Adresse" class="form-control @error('adresse') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('adresse'){{ $message }}@enderror
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="adresse" class=" form-control-label">Adresse</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <textarea id="description" cols="30" rows="10" wire:model="description" class="form-control"></textarea>
-                                <span class="help-block"></span>
-                            </div>
+                        <div class="form-group" wire:ignore>
+                            <label for="adresse" class=" form-control-label">Description</label>
+                            <textarea id="description" cols="30" rows="10" wire:model="description" class="form-control"></textarea>
+                            <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -65,7 +66,7 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-        $('#adresse').summernote({
+        $('#description').summernote({
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],
@@ -78,7 +79,7 @@
             height:300,
             callbacks: {
                 onChange: function(contents, $editable) {
-                    @this.set('adresse',contents);
+                    @this.set('description',contents);
                 }
             }
             });

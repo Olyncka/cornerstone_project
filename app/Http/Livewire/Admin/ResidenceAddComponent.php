@@ -7,10 +7,14 @@ use Illuminate\Support\Str;
 
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class ResidenceAddComponent extends Component
 {
+    use WithFileUploads;
     public $name;
+    public $slug;
+    public $image;
     public $adresse;
     public $description;
 
@@ -24,7 +28,7 @@ class ResidenceAddComponent extends Component
             'name'=>'required',
             'slug'=>'required|unique:residences,slug',
             'adresse'=>'required|max:250',
-            'image'=>'nullable|mimes:jpg,png,jpeg,gif,svg|max:5048',
+            'image'=>'required|mimes:jpg,png,jpeg,gif,svg|max:5048',
         ],[
             'name.required'=>'Entrer le Nom',
             'name.regex'=>'Pas de caractères spéciaux',
@@ -46,7 +50,7 @@ class ResidenceAddComponent extends Component
             //filename to store
             $filenametostore = $filename.'_'.time().'.'.$extension;
             //Upload File
-            $imagePath = $this->image->move(public_path('images/residences'), $filenametostore);
+            $imagePath = $this->image->storeAs('images/residences', $filenametostore);
             $residence->image=$imagePath;
 
         }

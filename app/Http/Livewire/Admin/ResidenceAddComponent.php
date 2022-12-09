@@ -16,12 +16,13 @@ class ResidenceAddComponent extends Component
 
     public function generateslug()
     {
-        $this->slug = Str::slug($this->title);
+        $this->slug = Str::slug($this->name);
     }
     public function addResidence()
     {
         $this->validate([
-            'name'=>'required|regex:/^[a-zA-Z]+$/u',
+            'name'=>'required',
+            'slug'=>'required|unique:residences,slug',
             'adresse'=>'required|max:250',
             'image'=>'nullable|mimes:jpg,png,jpeg,gif,svg|max:5048',
         ],[

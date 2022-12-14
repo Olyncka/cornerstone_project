@@ -61,10 +61,11 @@
             </p>
         </div>
         <div class="row m-5">
+          @foreach ($residences as $item)
             <div class="card p-2 my-2 mx-2" style="width: 20rem;">
                 <img src="img/Booth.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Booth Residence</h5>
+                  <h5 class="card-title">{{ $item->name }}</h5>
                   <p class="card-text">
                     Urgent Needs:
                     <ul>
@@ -74,59 +75,12 @@
                         ....
                     </ul>
                   </p>
-                  <a href="donate.html" class="btn btn-primary">Donate</a>
+                  <a href="{{ route('donate') }}" class="btn btn-primary">Donate</a>
                 </div>
-              </div>
-            <div class="card p-2 my-2 mx-2" style="width: 20rem;">
-                <img src="img/mcphail-residence.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">McPhail Residence</h5>
-                  <p class="card-text">
-                    Urgent Needs:
-                    <ul>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        ....
-                    </ul>
-                  </p>
-                  <a href="#" class="btn btn-primary">Donate</a>
-                </div>
-              </div>
-            <div class="card p-2 my-2 mx-2" style="width: 20rem;">
-                <img src="img/princeton-building-for-website.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">MacLaren Residence</h5>
-                  <p class="card-text">
-                    Urgent Needs:
-                    <ul>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        ....
-                    </ul>
-                  </p>
-                  <a href="#" class="btn btn-primary">Donate</a>
-                </div>
-              </div>
-            <div class="card p-2 my-2 mx-2" style="width: 20rem;">
-                <img src="img/MacLaren.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Booth Residence</h5>
-                  <p class="card-text">
-                    Urgent Needs:
-                    <ul>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        ....
-                    </ul>
-                  </p>
-                  <a href="#" class="btn btn-primary">Donate</a>
-                </div>
-              </div>
-        </div>
+            </div>
 
+          @endforeach
+        </div>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>

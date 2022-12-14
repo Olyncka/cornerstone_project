@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\Home;
 use App\Http\Livewire\Admin\DashbordComponent;
 use App\Http\Livewire\Admin\ResidenceAddComponent;
 use App\Http\Livewire\Admin\ResidenceListComponent;
-use App\Http\Livewire\Home;
+use App\Http\Livewire\DonateComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',[Home::class,'index']);
 
 Route::get('/dashbord',DashbordComponent::class)->name('dashbord');
 Route::get('/residence/add',ResidenceAddComponent::class)->name('residence.add');
 Route::get('/residence/list',ResidenceListComponent::class)->name('residence.list');
 
-Route::get('/home',Home::class);
+Route::get('/donate',DonateComponent::class)->name('donate');

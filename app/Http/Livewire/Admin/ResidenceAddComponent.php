@@ -24,11 +24,14 @@ class ResidenceAddComponent extends Component
     }
     public function addResidence()
     {
+        // dd('hiiii');
         $this->validate([
             'name'=>'required',
             'slug'=>'required|unique:residences,slug',
             'adresse'=>'required|max:250',
             'image'=>'required|mimes:jpg,png,jpeg,gif,svg|max:5048',
+            'description'=>'required|max:500',
+
         ],[
             'name.required'=>'Entrer le Nom',
             'name.regex'=>'Pas de caractères spéciaux',

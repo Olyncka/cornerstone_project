@@ -17,4 +17,13 @@ class Residence extends Model
         'description'
     ];
     protected $casts=[];
+
+    public function getImageAttribute($value)
+    {
+        if($value){
+            return asset('storage/'.$value);
+        }else{
+            return asset('images/user-default.png');
+        }
+    }
 }

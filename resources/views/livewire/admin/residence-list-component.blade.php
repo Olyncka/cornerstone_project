@@ -1,99 +1,73 @@
 <div>
-    @section('content')
-        <div class="row">
-            <div class="col-md-12">
-                <div class="overview-wrap">
-                    <h2 class="title-1">Add Residence</h2>
-                    <button  class="au-btn au-btn-icon au-btn--blue">
-                        <i class="zmdi zmdi-plus"></i>add item</button>
-                        <a href="#" wire:click='addmore'>add</a>
-                        {{ $number }}
-                </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="overview-wrap">
+                <h2 class="title-1">Add Residence</h2>
+
             </div>
         </div>
-        <div class="row m-t-25">
-            <div class="col-lg-12">
-                <div class="table-responsive table--no-card m-b-30">
-                    <table class="table table-borderless table-striped table-earning">
+    </div>
+    <div class="row m-t-25">
+        <div class="col-lg-12">
+            <!-- TOP CAMPAIGN-->
+            <div class="top-campaign">
+                <h3 class="title-3 m-b-30">top campaigns</h3>
+                <div class="table-responsive">
+                    <table class="table table-top-campaign">
                         <thead>
                             <tr>
-                                <th>date</th>
-                                <th>order ID</th>
-                                <th>name</th>
-                                <th class="text-right">price</th>
-                                <th class="text-right">quantity</th>
-                                <th class="text-right">total</th>
+                                <th class="text-center">Id</th>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Adresse</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>100398</td>
-                                <td>iPhone X 64Gb Grey</td>
-                                <td class="text-right">$999.00</td>
-                                <td class="text-right">1</td>
-                                <td class="text-right">$999.00</td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-28 01:22</td>
-                                <td>100397</td>
-                                <td>Samsung S8 Black</td>
-                                <td class="text-right">$756.00</td>
-                                <td class="text-right">1</td>
-                                <td class="text-right">$756.00</td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-27 02:12</td>
-                                <td>100396</td>
-                                <td>Game Console Controller</td>
-                                <td class="text-right">$22.00</td>
-                                <td class="text-right">2</td>
-                                <td class="text-right">$44.00</td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-26 23:06</td>
-                                <td>100395</td>
-                                <td>iPhone X 256Gb Black</td>
-                                <td class="text-right">$1199.00</td>
-                                <td class="text-right">1</td>
-                                <td class="text-right">$1199.00</td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-25 19:03</td>
-                                <td>100393</td>
-                                <td>USB 3.0 Cable</td>
-                                <td class="text-right">$10.00</td>
-                                <td class="text-right">3</td>
-                                <td class="text-right">$30.00</td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-29 05:57</td>
-                                <td>100392</td>
-                                <td>Smartwatch 4.0 LTE Wifi</td>
-                                <td class="text-right">$199.00</td>
-                                <td class="text-right">6</td>
-                                <td class="text-right">$1494.00</td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-24 19:10</td>
-                                <td>100391</td>
-                                <td>Camera C430W 4k</td>
-                                <td class="text-right">$699.00</td>
-                                <td class="text-right">1</td>
-                                <td class="text-right">$699.00</td>
-                            </tr>
-                            <tr>
-                                <td>2018-09-22 00:43</td>
-                                <td>100393</td>
-                                <td>USB 3.0 Cable</td>
-                                <td class="text-right">$10.00</td>
-                                <td class="text-right">3</td>
-                                <td class="text-right">$30.00</td>
-                            </tr>
+                            @forelse ($allresidences as $item)
+                                <tr>
+                                    <td class="text-center">{{ $item->id }}</td>
+                                    <td class="text-center"><img src="{{ $item->image }}" width="50px" alt=""> </td>
+                                    <td class="text-center">{{ $item->name }}</td>
+                                    <td class="text-center">{{ $item->adress }}</td>
+                                    <td class="text-center">{!! $item->description !!}</td>
+                                    <td class="text-center">
+                                        <div class="table-data-feature">
+                                            <a class="item" href="{{ route('residence.edit',$item->slug) }}">
+                                                <i class="zmdi zmdi-edit"></i>
+                                            </a>
+                                            <a class="item" href="#" wire:click="delete">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @empty
+                                <td class="text-center">Pas de residences</td>
+                            @endforelse
+
                         </tbody>
                     </table>
                 </div>
             </div>
+            <!--  END TOP CAMPAIGN-->
         </div>
-    @endsection
+    </div>
 </div>
+@push('scripts')
+@if (Session::has('success'))
+    <script>
+        swal("Success","{!! Session::get('success') !!}","success",
+        {
+            button:"Ok",
+        })
+    </script>
+@endif
+@if (Session::has('success'))
+    <script>
+        toastr.success("{!! Session::get('success') !!}");
+    </script>
+
+@endif
+@endpush

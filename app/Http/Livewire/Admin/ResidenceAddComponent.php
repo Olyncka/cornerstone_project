@@ -60,6 +60,7 @@ class ResidenceAddComponent extends Component
 
         if($residence->save()){
             $this->dispatchBrowserEvent('showsucces',['message'=>'Le Client a été ajouté avec Succès']);
+            return redirect()->route('residence.list');
         }else{
             $this->dispatchBrowserEvent('showerror',['message'=>'Erreur d\'ajouter un Client']);
         }

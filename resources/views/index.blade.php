@@ -63,7 +63,7 @@
         <div class="row m-5">
           @foreach ($residences as $item)
             <div class="card p-2 my-2 mx-2" style="width: 20rem;">
-                <img src="img/Booth.jpg" class="card-img-top" alt="...">
+                <img src="{{ $item->image }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{ $item->name }}</h5>
                   <p class="card-text">

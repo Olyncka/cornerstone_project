@@ -16,6 +16,7 @@
                 </div>
                 <form wire:submit.prevent="addResidence()" class="form-horizontal">
                     <div class="card-body card-block">
+                        {{-- <img src="{{ $residence->image }}" class="card-img-top" alt="..."> --}}
                         <div class="form-group">
                             <label for="name" class=" form-control-label">Name</label>
                             <input type="text" id="name" wire:model="name" placeholder="Enter the Residence Name." wire:keyup="generateslug" class="form-control @error('name') is-invalid @enderror">

@@ -17,13 +17,15 @@ class ResidenceUpdateComponent extends Component
 
     public function mount($slug)
     {
-        $residence=Residence::find($slug);
+        $residence=Residence::where('slug',$slug)->first();
+
         $this->name = $residence->name;
         $this->slug = $residence->slug;
         $this->adresse = $residence->adresse;
+        $this->image = $residence->image;
         $this->description = $residence->description;
     }
-    
+
     public function render()
     {
         return view('livewire.admin.residence-update-component')->layout('layouts.admin.main');

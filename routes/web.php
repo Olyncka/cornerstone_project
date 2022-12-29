@@ -24,7 +24,7 @@ Route::get('/',[Home::class,'index']);
 Route::get('/dashbord',DashbordComponent::class)->name('dashbord');
 Route::get('/residence/add',ResidenceAddComponent::class)->name('residence.add');
 Route::get('/residence/list',ResidenceListComponent::class)->name('residence.list');
-Route::get('/residence/add/{slug}',ResidenceUpdateComponent::class)->name('residence.edit');
+Route::get('/residence/edit/{slug}',ResidenceUpdateComponent::class)->name('residence.edit');
 
 
 Route::get('/donate',DonateComponent::class)->name('donate');

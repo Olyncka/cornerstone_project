@@ -7,12 +7,13 @@
         </div> -->
         <div class="form-group">
           <label for="exampleFormControlSelect1">1. Select a Residence</label>
-          <select class="form-control" id="exampleFormControlSelect1" >
+          {{-- <select class="form-control" id="exampleFormControlSelect1" >
             <option>-- select a residence--</option>
             @foreach ($residences as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>
             @endforeach
-          </select>
+          </select> --}}
+          <input type="text" wire:model="name" class="form-control" disabled>
         </div>
         <!-- <div class="form-group">
           <label for="exampleFormControlSelect2">Example multiple select</label>

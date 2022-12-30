@@ -29,6 +29,7 @@
     <link href="{{ asset('admin/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
     <link href="{{ asset('admin/css/theme.css')}}" rel="stylesheet" media="all">
@@ -180,6 +181,18 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Items</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ route('item.add') }}">Add Item</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('item.list') }}">List Item</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -296,6 +309,7 @@
 
     <link href="{{ asset('admin/summernote/summernote.min.css') }}" rel="stylesheet">
     <script src="{{ asset('admin/summernote/summernote.min.js') }}"></script>
+    <script src="{{ asset('sweetalert2/sweetalert2.all.min.js') }}"></script>
     @stack('scripts')
     @livewireScripts
 </body>

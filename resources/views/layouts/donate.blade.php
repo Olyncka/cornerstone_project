@@ -85,7 +85,7 @@
            </div>
            <div class="col-md-6 ">
             <h4>Please Fill out this form for your donations</h4>
-              <livewire:donate-component>
+              {{ $slot }}
 
            </div>
 

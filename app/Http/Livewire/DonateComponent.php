@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class DonateComponent extends Component
 {
-    public $nom;
+    public $name;
     public $email;
     public $adresse;
     public $residence_id;
@@ -16,6 +16,13 @@ class DonateComponent extends Component
     public $quantity;
     public $inputs = [];
     public $i = 1;
+
+    public function mount($id)
+    {
+
+        $res=Residence::where('id',$id)->first();
+        $this->name =$res->name;
+    }
 
     public function add($i)
     {
@@ -57,9 +64,6 @@ class DonateComponent extends Component
     }
     public function render()
     {
-        $data=[
-            "residences"=>Residence::all(),
-        ];
-        return view('livewire.donate-component',$data)->layout('donate');
+        return view('livewire.donate-component')->layout('layouts.donate');
     }
 }

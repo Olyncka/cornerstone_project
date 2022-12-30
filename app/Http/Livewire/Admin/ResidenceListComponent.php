@@ -7,11 +7,7 @@ use Livewire\Component;
 
 class ResidenceListComponent extends Component
 {
-    public $number=0;
-    public function addmore()
-    {
-        $this->number+=1;
-    }
+    
     public function render()
     {
         $data=[

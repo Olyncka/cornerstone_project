@@ -30,7 +30,7 @@ class ResidenceAddComponent extends Component
             'slug'=>'required|unique:residences,slug',
             'adresse'=>'required|max:250',
             'image'=>'required|mimes:jpg,png,jpeg,gif,svg|max:5048',
-            'description'=>'required|max:500',
+            'description'=>'required',
 
         ],[
             'name.required'=>'Entrer le Nom',

@@ -75,7 +75,7 @@
                         ....
                     </ul>
                   </p>
-                  <a href="{{ route('donate') }}" class="btn btn-primary">Donate</a>
+                  <a href="{{ route('donate',$item->id) }}" class="btn btn-primary">Donate</a>
                 </div>
             </div>
 

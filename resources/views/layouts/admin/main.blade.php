@@ -75,6 +75,18 @@
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>un chef de Residence</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ route('admin.chefderesidence.add') }}">Ajouter un chef de Residence</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.item.list') }}">Liste les chefs de residences</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Articles</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
@@ -103,17 +115,29 @@
                     <ul class="list-unstyled navbar__list">
                         <li>
                             <a href="{{ route('admin.dashboard') }}">
-                                <i class="fas fa-chart-bar"></i>Tableau de Bord</a>
+                                <i class="fas fa-tachometer-alt"></i>Tableau de Bord</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Residences</a>
+                                <i class="fas fa-vihara"></i>Residences</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="{{ route('admin.residence.add') }}">Ajouter Residence</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('admin.residence.list') }}">Liste des Residences</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-users"></i>un chef de Residence</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ route('admin.chefderesidence.add') }}">Ajouter un chef de Residence</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.item.list') }}">Liste les chefs de residences</a>
                                 </li>
                             </ul>
                         </li>

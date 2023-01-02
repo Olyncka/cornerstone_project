@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Items;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
@@ -31,6 +32,8 @@ class ItemAddComponent extends Component
         $item=new Items();
         $item->name=$this->name;
         $item->slug=$this->slug;
+        $item->residence_id=Auth::user()->residence_id;
+        $item->user_id=Auth::user()->id;
 
 
         if($item->save()){

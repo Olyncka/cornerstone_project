@@ -8,6 +8,6 @@ class AjouterAgent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.gestion-agent.ajouter-agent');
+        return view('livewire.admin.gestion-agent.ajouter-agent')->layout('layouts.admin.main');
     }
 }

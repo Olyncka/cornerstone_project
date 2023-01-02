@@ -21,7 +21,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--green">
                         <h2 class="number">{{ $residencesCount }}</h2>
-                        <span class="desc">members online</span>
+                        <span class="desc">Tous les residences</span>
                         <div class="icon">
                             <i class="zmdi zmdi-account-o"></i>
                         </div>
@@ -30,7 +30,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--orange">
                         <h2 class="number">{{ $usersCount }}</h2>
-                        <span class="desc">items sold</span>
+                        <span class="desc">Tous les utilisateurs</span>
                         <div class="icon">
                             <i class="zmdi zmdi-shopping-cart"></i>
                         </div>
@@ -39,7 +39,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--blue">
                         <h2 class="number">{{ $itemsCount }}</h2>
-                        <span class="desc">this week</span>
+                        <span class="desc">Tous les articles</span>
                         <div class="icon">
                             <i class="zmdi zmdi-calendar-note"></i>
                         </div>
@@ -48,7 +48,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--red">
                         <h2 class="number">{{ $donatorsCount }}</h2>
-                        <span class="desc">total earnings</span>
+                        <span class="desc">Tous les donateurs</span>
                         <div class="icon">
                             <i class="zmdi zmdi-money"></i>
                         </div>

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Home;
 use App\Http\Livewire\Admin\DashbordComponent;
+use App\Http\Livewire\Admin\GestionAgent\AjouterAgent;
+use App\Http\Livewire\Admin\GestionAgent\ListeAgent;
 use App\Http\Livewire\Admin\ItemAddComponent;
 use App\Http\Livewire\Admin\ItemListComponent;
 use App\Http\Livewire\Admin\ItemUpateComponent;
@@ -43,6 +45,11 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/item/add',ItemAddComponent::class)->name('item.add');
     Route::get('/item/list',ItemListComponent::class)->name('item.list');
     Route::get('/item/edit/{slug}',ItemUpateComponent::class)->name('item.edit');
+
+    Route::get('/chefderesidence/add',AjouterAgent::class)->name('chefderesidence.add');
+    Route::get('/chefderesidence/list',ListeAgent::class)->name('chefderesidence.list');
+
+
 
 
 });

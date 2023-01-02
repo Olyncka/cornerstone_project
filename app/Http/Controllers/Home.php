@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Residence;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Home extends Controller
 {
@@ -11,5 +12,10 @@ class Home extends Controller
     {
         $residences=Residence::all();
         return view('index',compact('residences'));
+    }
+
+    public function logout(){
+        Auth::guard('web')->logout();
+        return redirect()->route('login');
     }
 }

@@ -24,17 +24,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[Home::class,'index']);
 
-Route::get('/dashbord',DashbordComponent::class)->name('dashbord');
-
-Route::get('/residence/add',ResidenceAddComponent::class)->name('residence.add');
-Route::get('/residence/list',ResidenceListComponent::class)->name('residence.list');
-Route::get('/residence/edit/{slug}',ResidenceUpdateComponent::class)->name('residence.edit');
-
-Route::get('/item/add',ItemAddComponent::class)->name('item.add');
-Route::get('/item/list',ItemListComponent::class)->name('item.list');
-Route::get('/item/edit/{slug}',ItemUpateComponent::class)->name('item.edit');
-
-
-
-
 Route::get('/donate/{id}',DonateComponent::class)->name('donate');
+
+Route::middleware(['guest:web'])->group(function(){
+    Route::view('/login','Auth.login')->name('login');
+    // Route::get('/login',AuthLogin::class)->name('login');
+    Route::view('/forgot-password','forgot')->name('forgot-password');
+});
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('/dashboard',DashbordComponent::class)->name('dashboard');
+
+    Route::get('/residence/add',ResidenceAddComponent::class)->name('residence.add');
+    Route::get('/residence/list',ResidenceListComponent::class)->name('residence.list');
+    Route::get('/residence/edit/{slug}',ResidenceUpdateComponent::class)->name('residence.edit');
+
+    Route::get('/item/add',ItemAddComponent::class)->name('item.add');
+    Route::get('/item/list',ItemListComponent::class)->name('item.list');
+    Route::get('/item/edit/{slug}',ItemUpateComponent::class)->name('item.edit');
+
+});

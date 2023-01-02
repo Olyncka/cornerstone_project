@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Illuminate\Support\Facades\URL;
 
 class Authenticate extends Middleware
 {
@@ -15,7 +16,14 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            // return route('login');
+            if($request->routeIs('admin.*')){
+                session()->flash('error','Vous devez vous indentifier');
+                return route('login',['fail'=>true,'returnUrl'=>URL::current()]);
+            }elseif($request->routeIs('agent.*')){
+                session()->flash('error','Vous devez vous indentifier');
+                return route('login',['fail'=>true,'returnUrl'=>URL::current()]);
+            }
         }
     }
 }

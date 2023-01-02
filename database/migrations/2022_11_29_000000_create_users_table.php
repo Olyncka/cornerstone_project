@@ -19,8 +19,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role');
-            $table->foreignId('residence_id')->constrained();
+            $table->string('image')->nullable();
+            $table->boolean('status')->default(1);
+            $table->foreignId('role_id')->constrained('roles');
+            $table->bigInteger('residence_id')->unsigned()->nullable();
+            $table->foreign('residence_id')->references('id')->on('residences')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

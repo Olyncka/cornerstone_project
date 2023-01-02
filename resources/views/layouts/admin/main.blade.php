@@ -166,18 +166,18 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="{{ route('dashbord') }}">
-                                <i class="fas fa-chart-bar"></i>Dashboard</a>
+                            <a href="{{ route('admin.dashboard') }}">
+                                <i class="fas fa-chart-bar"></i>Tableau de Bord</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Residences</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('residence.add') }}">Add Residence</a>
+                                    <a href="{{ route('admin.residence.add') }}">Ajouter Residence</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('residence.list') }}">List Residences</a>
+                                    <a href="{{ route('admin.residence.list') }}">Liste des Residences</a>
                                 </li>
                             </ul>
                         </li>
@@ -186,10 +186,10 @@
                                 <i class="fas fa-copy"></i>Items</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('item.add') }}">Add Item</a>
+                                    <a href="{{ route('admin.item.add') }}">Ajouter un Article</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('item.list') }}">List Item</a>
+                                    <a href="{{ route('admin.item.list') }}">Liste des Articles</a>
                                 </li>
                             </ul>
                         </li>
@@ -206,12 +206,12 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
+                            {{-- <form class="form-header" action="" method="POST">
                                 <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
-                            </form>
+                            </form> --}}
                             <div class="header-button">
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
@@ -221,7 +221,7 @@
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
                                         </div>
-                                        <div class="account-dropdown js-dropdown">
+                                        {{-- <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
@@ -253,7 +253,7 @@
                                                 <a href="#">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>

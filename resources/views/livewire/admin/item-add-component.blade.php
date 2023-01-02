@@ -2,9 +2,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
-                <h2 class="title-1">Add Item</h2>
-                <button class="au-btn au-btn-icon au-btn--blue">
-                    <i class="zmdi zmdi-plus"></i>add item</button>
+                <h2 class="title-1">Ajouter Item</h2>
+
             </div>
         </div>
     </div>
@@ -17,7 +16,7 @@
                 <form wire:submit.prevent="addItem()" class="form-horizontal">
                     <div class="card-body card-block">
                         <div class="form-group">
-                            <label for="name" class=" form-control-label">Name</label>
+                            <label for="name" class=" form-control-label">Nom</label>
                             <input type="text" id="name" wire:model="name" placeholder="Enter the Residence Name." wire:keyup="generateslug" class="form-control @error('name') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('name'){{ $message }}@enderror
@@ -33,10 +32,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Submit
-                        </button>
-                        <button type="reset" class="btn btn-danger btn-sm">
-                            <i class="fa fa-ban"></i> Reset
+                            <i class="fa fa-dot-circle-o"></i> Ajouter
                         </button>
                     </div>
                 </form>

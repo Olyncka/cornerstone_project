@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Article;
 use App\Models\Items;
 use App\Models\Needs;
 use App\Models\Residence;
@@ -28,12 +29,13 @@ class DonateComponent extends Component
 
         $res=Residence::where('id',$id)->first();
         $this->name =$res->name;
-        $this->fill([
-            'itemsForm' => collect([[
-                'quantity' => $this->quantity,
-                'item_id' => $this->item_id,
-                ]]),
-        ]);
+        $this->residence_id =$res->id;
+        // $this->fill([
+        //     'itemsForm' => collect([[
+        //         'quantity' => $this->quantity,
+        //         'item_id' => $this->item_id,
+        //         ]]),
+        // ]);
     }
 
     public function fillItem()
@@ -88,8 +90,9 @@ class DonateComponent extends Component
     public function render()
     {
         $data=[
-            "items"=>Items::all(),
-            "itemsForm"=>$this->itemsForm
+            "items"=>Article::where('residence_id',$this->residence_id)->get(),
+            "residences"=>Residence::find($this->residence_id)->first(),
+            // "itemsForm"=>$this->itemsForm
         ];
         return view('livewire.donate-component',$data)->layout('layouts.donate');
     }

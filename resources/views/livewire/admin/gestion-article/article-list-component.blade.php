@@ -29,7 +29,7 @@
                                     <td class="text-center">{{ $item->slug }}</td>
                                     <td class="text-center">
                                         <div class="table-data-feature">
-                                            <a class="item" href="{{ route('item.edit',$item->slug) }}">
+                                            <a class="item" href="{{ route('admin.article.edit',$item->slug) }}">
                                                 <i class="zmdi zmdi-edit"></i>
                                             </a>
                                             <a class="item" href="#" wire:click="delete">

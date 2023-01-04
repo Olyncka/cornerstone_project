@@ -46,50 +46,8 @@
         </div>
       </nav>
       <div class="container">
-        <div class="row text-justify align-itens-center mx-5">
-            <h3 class="my-4">Booth Residence</h3>
-            <div class="col-md-6">
-
-                <img src="img/Booth.jpg" class="my-3" alt="">
-            </div>
-            <div class="col-md-6 d-flex align-itens-center justify-content-center">
-                <figure class="text-center">
-                    <blockquote class="blockquote text-justify ">
-                      <p>"I have lived in a lot of different places. I lived on my own but that did not work. I needed support and safety. Cornerstone opened their arms to me and took me in. Cornerstone helps me stay out of hospital. I have lived at 314 Booth Street for 10 years. This is the longest I have ever lived anywhere in my life. I feel safe here. The staff at Cornerstone are caring, understanding, and all encompassing.”</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                      Resident <cite title="Source Title"></cite>
-                    </figcaption>
-                  </figure>
-            </div>
-        </div>
-        <div class="row m-5">
-            <div class="col-md-6">
-            <h4>Urgents Needs</h4>
-            <ul>
-                <li>Toothpaste</li>
-                <li>Toothpaste</li>
-                <li>Toothpaste</li>
-                <li>Toothpaste</li>
-                <li>Toothpaste</li>
-            </ul>
-            <p>Please note we only serve adult women, and due to limited capacity and storage we do not accept the following items.</p>
-            <ul>
-                <li>Used clothing</li>
-                <li>Used footwear</li>
-                <li>Furniture</li>
-                <li>Children’s items</li>
-
-                </li>
-            </ul>
-           </div>
-           <div class="col-md-6 ">
-            <h4>Please Fill out this form for your donations</h4>
-              {{ $slot }}
-
-           </div>
-
-        </div>
+        {{ $slot }}
+        
 
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

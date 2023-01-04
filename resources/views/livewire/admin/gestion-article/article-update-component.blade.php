@@ -12,9 +12,9 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Ajouter une Residence</strong>
+                    <strong>Ajouter un Article</strong>
                 </div>
-                <form wire:submit.prevent="addItem()" class="form-horizontal">
+                <form wire:submit.prevent="updateArticle()" class="form-horizontal">
                     <div class="card-body card-block">
                         <div class="form-group">
                             <label for="name" class=" form-control-label">Name</label>

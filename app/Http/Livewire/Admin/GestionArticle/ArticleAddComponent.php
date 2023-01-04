@@ -39,7 +39,7 @@ class ArticleAddComponent extends Component
 
 
         if($item->save()){
-            return redirect()->route('item.list')->with('showsucces',['message'=>'Article a été ajouté avec Succès']);
+            return redirect()->route('admin.article.list')->with('showsucces',['message'=>'Article a été ajouté avec Succès']);
             // $this->dispatchBrowserEvent;
 
         }else{

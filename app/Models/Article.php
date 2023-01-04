@@ -9,4 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Article extends Model
 {
     use HasFactory ,SoftDeletes;
+
+    public function residences(){
+        return $this->belongsTo(Residence::class,'residence_id');
+    }
 }

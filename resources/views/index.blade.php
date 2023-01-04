@@ -69,10 +69,9 @@
                   <p class="card-text">
                     Urgent Needs:
                     <ul>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        <li>Toothpast</li>
-                        ....
+                        @foreach ($articles as $article)
+                            <li>{{ $article->name }}</li>
+                        @endforeach
                     </ul>
                   </p>
                   <a href="{{ route('donate',$item->id) }}" class="btn btn-primary">Donate</a>

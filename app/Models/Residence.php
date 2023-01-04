@@ -26,4 +26,7 @@ class Residence extends Model
             return asset('images/user-default.png');
         }
     }
+    public function article(){
+        return $this->hasMany(Article::class);
+    }
 }

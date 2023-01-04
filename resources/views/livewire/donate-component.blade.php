@@ -26,7 +26,7 @@
           </select>
         </div> -->
         <div class="row">
-            <div class="col-sm-6">
+            {{-- <div class="col-sm-6">
                 <div class="form-group mb-3">
                     <label for="item">Item(s) donated</label>
                     <input type="text" class="form-control" wire:model="item.0"  id="item">
@@ -37,23 +37,35 @@
                     <label for="quantity">Quantity</label>
                     <input type="number" class="form-control" wire:model="quantity.0" id="quantity">
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-2" wire:ignore>
-                <button class="btn text-white btn-info btn-sm" wire:click.prevent="add({{$i}})">Add</button>
+                <button class="btn text-white btn-info btn-sm m-3" wire:click.prevent="fillItem">Ajouter</button>
             </div>
         </div>
+
+            <table>
+                @foreach ($itemsForm as $item)
+                    <td>{{ $item }}</td>
+                @endforeach
+
+            </table>
         @foreach ($inputs as $key => $value)
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group mb-3">
                     <label for="item">2. Item(s) donated</label>
-                  <input type="text" class="form-control" wire:model="item.{{ $value }}"  id="item">
+                    <select class="form-control" wire:model="inputs.{{ $key }}.item" id="">
+                        @foreach ($items as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
+                    </select>
+                  {{-- <input type="text" class="form-control" wire:model="inputs.{{ $key }}.item"  id="item"> --}}
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group mb-3">
                     <label for="quantity">Quantity</label>
-                    <input type="number"  class="form-control" wire:model="quantity.{{ $value }}" id="quantity">
+                    <input type="number"  class="form-control" wire:model="inputs.{{ $key }}.quantity" id="quantity">
                 </div>
             </div>
             <div class="col-md-2">
@@ -61,26 +73,33 @@
             </div>
         </div>
         @endforeach
+        <label> Date</label>
+        <div class="form-group row mb-3" >
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Date </label>
+            <div class="col-sm-10">
+              <input type="date"  class="form-control" wire:model="don_date" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
         <label>4. Donor Informations</label>
         <div class="form-group row mb-3" >
             <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" id="inputEmail3" placeholder="John Doe">
+              <input type="text"  class="form-control" wire:model="don_name" id="inputEmail3" placeholder="John Doe">
             </div>
         </div>
         <div class="form-group row mb-3" >
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="email"  class="form-control" id="inputEmail3" placeholder="Email">
+              <input type="email"  class="form-control" wire:model="don_email" id="inputEmail3" placeholder="Email">
             </div>
         </div>
         <div class="form-group row mb-3">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Phone number</label>
+            <label for="inputPassword3"  class="col-sm-2 col-form-label">Phone number</label>
             <div class="col-sm-10">
-              <input type="tel"  class="form-control" id="inputPassword3" placeholder="te:+125346788">
+              <input type="tel"  class="form-control" wire:model="don_phone" id="inputPassword3" placeholder="te:+125346788">
             </div>
         </div>
-        <button type="submit button" class="btn btn-primary">Submit</button>
+        <button type="submit button" class="btn btn-primary">Envoyer</button>
       </form>
       @livewireScripts
 </div>

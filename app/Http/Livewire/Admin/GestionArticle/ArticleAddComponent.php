@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Livewire\Admin;
+namespace App\Http\Livewire\Admin\GestionArticle;
 
-use App\Models\Items;
+use App\Models\Article;
 use App\Models\Residence;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
 
-class ItemAddComponent extends Component
+class ArticleAddComponent extends Component
 {
     public $name;
     public $slug;
@@ -18,10 +18,6 @@ class ItemAddComponent extends Component
     public function generateslug()
     {
         $this->slug = Str::slug($this->name);
-    }
-    public function mount()
-    {
-
     }
     public function addItem()
     {
@@ -35,7 +31,7 @@ class ItemAddComponent extends Component
             'name.regex'=>'Pas de caractères spéciaux',
 
         ]);
-        $item=new Items();
+        $item=new Article();
         $item->name=$this->name;
         $item->slug=$this->slug;
         $item->residence_id=$this->residence_id;
@@ -61,6 +57,6 @@ class ItemAddComponent extends Component
             $this->residence_id = $reside;
 
         }
-        return view('livewire.admin.item-add-component',["reside"=>$reside])->layout('layouts.admin.main');
+        return view('livewire.admin.gestion-article.article-add-component',["reside"=>$reside])->layout('layouts.admin.main');
     }
 }

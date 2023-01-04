@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Article;
 use App\Models\Donateur;
 use App\Models\Items;
 use App\Models\Residence;
@@ -15,7 +16,7 @@ class DashbordComponent extends Component
         $data=[
             "residencesCount"=>Residence::count(),
             "usersCount"=>User::count(),
-            "itemsCount"=>Items::count(),
+            "itemsCount"=>Article::count(),
             "donatorsCount"=>Donateur::count(),
 
         ];

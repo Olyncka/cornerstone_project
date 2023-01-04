@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Items;
 use App\Models\Needs;
 use App\Models\Residence;
+use Illuminate\Support\Collection;
 use Livewire\Component;
 
 class DonateComponent extends Component
@@ -13,28 +15,45 @@ class DonateComponent extends Component
     public $adresse;
     public $residence_id;
     public $item_id;
+    public $itemsForm=[];
     public $quantity;
-    public $inputs = [];
     public $i = 1;
+    public $don_name;
+    public $don_email;
+    public $don_phone;
+    public $don_date;
 
     public function mount($id)
     {
 
         $res=Residence::where('id',$id)->first();
         $this->name =$res->name;
+        $this->fill([
+            'itemsForm' => collect([[
+                'quantity' => $this->quantity,
+                'item_id' => $this->item_id,
+                ]]),
+        ]);
     }
 
-    public function add($i)
+    public function fillItem()
     {
+        // $itemsForm=[
+        //     'options' => $this->quantity,
+        //     'value' => $this->item_id,
 
-        $i = $i + 1;
-        $this->i = $i;
-        array_push($this->inputs ,$i);
+        // ];
+        $itemsForm=[
+            'quantity' => $this->quantity,
+            'item_id' => $this->item_id,
+        ];
     }
-    public function remove($i)
-    {
-        unset($this->inputs[$i]);
-    }
+
+
+
+
+
+
 
     public function addDonation()
     {
@@ -53,8 +72,12 @@ class DonateComponent extends Component
     );
 
     foreach ($this->name as $key => $value) {
-        Needs::create(['name' => $this->name[$key], 'phone' => $this->phone[$key]]);
+        Needs::create([
+            'item_id' => $value['item_id'],
+            'quantity' => $value['quantity']
+        ]);
     }
+
 
     $this->inputs = [];
 
@@ -64,6 +87,10 @@ class DonateComponent extends Component
     }
     public function render()
     {
-        return view('livewire.donate-component')->layout('layouts.donate');
+        $data=[
+            "items"=>Items::all(),
+            "itemsForm"=>$this->itemsForm
+        ];
+        return view('livewire.donate-component',$data)->layout('layouts.donate');
     }
 }

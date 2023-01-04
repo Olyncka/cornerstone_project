@@ -14,7 +14,7 @@
                 <div class="card-header">
                     <strong>Ajouter une Residence</strong>
                 </div>
-                <form wire:submit.prevent="addResidence()" class="form-horizontal">
+                <form wire:submit.prevent="updateResidence()" class="form-horizontal">
                     <div class="card-body card-block">
                         {{-- <img src="{{ $residence->image }}" class="card-img-top" alt="..."> --}}
                         <div class="form-group">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="slug" class=" form-control-label">slug</label>
+                            <label for="slug" class="form-control-label">slug</label>
                             <input type="text" id="slug" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('slug'){{ $message }}@enderror
@@ -33,11 +33,17 @@
                         </div>
                         <div class="form-group">
                             <label for="image" class=" form-control-label">Image</label>
-                            <input type="file" id="image" wire:model="image" placeholder="Enter the Residence Image" class="form-control @error('image') is-invalid @enderror">
+                            <input type="file" id="image" wire:model="newimage" placeholder="Enter the Residence Image" class="form-control @error('image') is-invalid @enderror">
                             <div class="invalid-feedback">
-                                @error('image'){{ $message }}@enderror
+                                @error('newimage'){{ $message }}@enderror
                             </div>
+                            @if ($newimage)
+                                <img src="{{ $newimage->temporaryUrl() }}" class="profile-user-img img-fluid img-circle" width="25px">
+                            @else
+                                <img src="{{ asset('storage/'.$image) }}" width="95px" alt="">
+                            @endif
                         </div>
+
                         <div class="form-group">
                             <label for="adresse" class=" form-control-label">Adresse</label>
                             <input type="text" id="adresse" wire:model="adresse" placeholder="Enter the Residence Adresse" class="form-control @error('adresse') is-invalid @enderror">

@@ -47,9 +47,8 @@
                                 <img src="{{ asset('images/logo.png') }}" alt="Cornerstone Women Canada">
                             </a>
                         </div>
-                        <div class="login-form">
-                            @livewire('auth-form')
-                        </div>
+                        @livewire('auth-login-form')
+                        
                     </div>
                 </div>
             </div>

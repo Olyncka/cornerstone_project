@@ -81,7 +81,7 @@
                                     <a href="{{ route('admin.chefderesidence.add') }}">Ajouter un chef de Residence</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.item.list') }}">Liste les chefs de residences</a>
+                                    <a href="{{ route('admin.article.list') }}">Liste les chefs de residences</a>
                                 </li>
                             </ul>
                         </li>
@@ -90,10 +90,10 @@
                                 <i class="fas fa-copy"></i>Articles</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.item.add') }}">Ajouter un article</a>
+                                    <a href="{{ route('admin.article.add') }}">Ajouter un article</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.item.list') }}">Liste des articles</a>
+                                    <a href="{{ route('admin.article.list') }}">Liste des articles</a>
                                 </li>
                             </ul>
                         </li>
@@ -137,7 +137,7 @@
                                     <a href="{{ route('admin.chefderesidence.add') }}">Ajouter un chef de Residence</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.item.list') }}">Liste les chefs de residences</a>
+                                    <a href="{{ route('admin.article.list') }}">Liste les chefs de residences</a>
                                 </li>
                             </ul>
                         </li>
@@ -146,10 +146,10 @@
                                 <i class="fas fa-copy"></i>Articles</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.item.add') }}">Ajouter un article</a>
+                                    <a href="{{ route('admin.article.add') }}">Ajouter un article</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.item.list') }}">Liste des articles</a>
+                                    <a href="{{ route('admin.article.list') }}">Liste des articles</a>
                                 </li>
                             </ul>
                         </li>
@@ -263,6 +263,21 @@
     <link href="{{ asset('admin/summernote/summernote.min.css') }}" rel="stylesheet">
     <script src="{{ asset('admin/summernote/summernote.min.js') }}"></script>
     <script src="{{ asset('sweetalert2/sweetalert2.all.min.js') }}"></script>
+
+    @if (Session::has('success'))
+        <script>
+            swal("Success","{!! Session::get('success') !!}","success",
+            {
+                button:"Ok",
+            })
+        </script>
+    @endif
+    @if (Session::has('success'))
+        <script>
+            toastr.success("{!! Session::get('success') !!}");
+        </script>
+
+    @endif
     @stack('scripts')
     @livewireScripts
 </body>

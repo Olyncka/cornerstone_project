@@ -8,6 +8,6 @@ class ListeAgent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.gestion-agent.liste-agent');
+        return view('livewire.admin.gestion-agent.liste-agent')->layout('layouts.admin.main');
     }
 }

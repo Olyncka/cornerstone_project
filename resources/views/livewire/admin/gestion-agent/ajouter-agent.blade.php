@@ -13,7 +13,7 @@
                 <div class="card-header">
                     <strong>Ajouter un Chef de Residence</strong>
                 </div>
-                <form wire:submit.prevent="addItem()" class="form-horizontal">
+                <form wire:submit.prevent="addUser()" class="form-horizontal">
                     <div class="card-body card-block">
                         <div class="form-group">
                             <label for="name" class=" form-control-label">Nom</label>
@@ -29,19 +29,27 @@
                                 @error('email'){{ $message }}@enderror
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3">
+                        <div class="row">
+                            <div class="form-group col-md-6">
                                 <label for="file-input" class=" form-control-label">Choisir un image</label>
+                                <div class="col-12 col-md-9">
+                                    <input type="file" id="file-input" wire:model="image" class="form-control-file @error('image') is-invalid @enderror">
+                                </div>
+                                <div class="invalid-feedback">
+                                    @error('image'){{ $message }}@enderror
+                                </div>
                             </div>
-                            <div class="col-12 col-md-9">
-                                <input type="file" id="file-input" name="file-input" class="form-control-file">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="slug" class=" form-control-label">slug</label>
-                            <input type="text" id="slug" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
-                            <div class="invalid-feedback">
-                                @error('slug'){{ $message }}@enderror
+                            <div class="form-group col-md-6">
+                                <label for="slug" class="form-control-label">Residence</label>
+                                <select class="form-control  @error('residence_id') is-invalid @enderror" wire:model="residence_id" >
+                                    <option value="">Selectionner</option>
+                                    @foreach ($residences as $res)
+                                        <option value="{{ $res->id }}">{{ $res->name }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="invalid-feedback">
+                                    @error('residence_id'){{ $message }}@enderror
+                                </div>
                             </div>
                         </div>
                     </div>

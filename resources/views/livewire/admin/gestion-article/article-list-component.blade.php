@@ -32,7 +32,7 @@
                                             <a class="item" href="{{ route('admin.article.edit',$item->slug) }}">
                                                 <i class="zmdi zmdi-edit"></i>
                                             </a>
-                                            <a class="item" href="#" wire:click="delete">
+                                            <a class="item" href="#" wire:click="delete({{ $item->id }})">
                                                 <i class="zmdi zmdi-delete"></i>
                                             </a>
                                         </div>

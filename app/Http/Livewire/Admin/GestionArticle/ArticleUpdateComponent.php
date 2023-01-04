@@ -25,6 +25,7 @@ class ArticleUpdateComponent extends Component
         $item=Article::where('slug',$slug)->first();
         $this->name = $item->name;
         $this->slug = $item->slug;
+        $this->residence_id = $item->residence_id;
         $this->article_id = $item->id;
     }
     public function updateArticle()

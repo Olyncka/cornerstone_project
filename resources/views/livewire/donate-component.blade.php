@@ -9,7 +9,7 @@
         <div class="col-md-6 d-flex align-itens-center justify-content-center">
             <figure class="text-center">
                 <blockquote class="blockquote text-justify ">
-                  <p>{{ $residences->description }}</p>
+                  <p>{!! $residences->description !!}</p>
                 </blockquote>
                 <figcaption class="blockquote-footer">
                   Resident <cite title="Source Title"></cite>
@@ -21,13 +21,11 @@
         <div class="col-md-6">
         <h4>Urgents Needs</h4>
         <ul>
-            <li>Toothpaste</li>
-            <li>Toothpaste</li>
-            <li>Toothpaste</li>
-            <li>Toothpaste</li>
-            <li>Toothpaste</li>
+            @foreach ($items as $item)
+                <li>{{ $item->name }}</li>
+            @endforeach
         </ul>
-        <p>Please note we only serve adult women, and due to limited capacity and storage we do not accept the following items.</p>
+        {{-- <p>Please note we only serve adult women, and due to limited capacity and storage we do not accept the following items.</p>
         <ul>
             <li>Used clothing</li>
             <li>Used footwear</li>
@@ -35,7 +33,7 @@
             <li>Children’s items</li>
 
             </li>
-        </ul>
+        </ul> --}}
        </div>
        <div class="col-md-6 ">
         <h4>Please Fill out this form for your donations</h4>

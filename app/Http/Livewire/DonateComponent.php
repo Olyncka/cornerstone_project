@@ -91,7 +91,7 @@ class DonateComponent extends Component
     {
         $data=[
             "items"=>Article::where('residence_id',$this->residence_id)->get(),
-            "residences"=>Residence::find($this->residence_id)->first(),
+            "residences"=>Residence::findOrFail($this->residence_id),
             // "itemsForm"=>$this->itemsForm
         ];
         return view('livewire.donate-component',$data)->layout('layouts.donate');

@@ -30,7 +30,7 @@
                 <li class="nav-item">
                     <a href="#About" class="nav-link">About us</a></li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Donations</a>
+                    <a href="/" class="nav-link active">Donations</a>
                 </li>
                 <li class="nav-item">
                     <!-- <a href="#Portofolio" class="nav-link">Portofolio</a> -->

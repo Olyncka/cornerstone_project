@@ -20,12 +20,12 @@
                     @error('password'){{ $message }}@enderror
                 </div>
             </div>
-            {{-- <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Connexion</button> --}}
-            <div class="card-footer">
+            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Connexion</button>
+            {{-- <div class="card-footer">
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Ajouter
                 </button>
-            </div>
+            </div> --}}
         </form>
 
     </div>

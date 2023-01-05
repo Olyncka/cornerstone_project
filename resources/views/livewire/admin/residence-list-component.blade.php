@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
-                <h2 class="title-1">Add Residence</h2>
+                <h2 class="title-1">All Residences</h2>
 
             </div>
         </div>
@@ -11,7 +11,7 @@
         <div class="col-lg-12">
             <!-- TOP CAMPAIGN-->
             <div class="top-campaign">
-                <h3 class="title-3 m-b-30">top campaigns</h3>
+                <h3 class="title-3 m-b-30">All Residences</h3>
                 <div class="table-responsive">
                     <table class="table table-top-campaign">
                         <thead>

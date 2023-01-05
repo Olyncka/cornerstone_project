@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
-                <h2 class="title-1">Ajouter un Chef de Residence</h2>
+                <h2 class="title-1">Add Program Manager</h2>
 
             </div>
         </div>
@@ -11,12 +11,12 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Ajouter un Chef de Residence</strong>
+                    <strong>Add Program Manager</strong>
                 </div>
                 <form wire:submit.prevent="addUser()" class="form-horizontal">
                     <div class="card-body card-block">
                         <div class="form-group">
-                            <label for="name" class=" form-control-label">Nom</label>
+                            <label for="name" class=" form-control-label">Name</label>
                             <input type="text" id="name" wire:model="name" placeholder="Enter the Residence Name." class="form-control @error('name') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('name'){{ $message }}@enderror
@@ -31,7 +31,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="file-input" class=" form-control-label">Choisir un image</label>
+                                <label for="file-input" class=" form-control-label">Image</label>
                                 <div class="col-12 col-md-9">
                                     <input type="file" id="file-input" wire:model="image" class="form-control-file @error('image') is-invalid @enderror">
                                 </div>
@@ -42,7 +42,7 @@
                             <div class="form-group col-md-6">
                                 <label for="slug" class="form-control-label">Residence</label>
                                 <select class="form-control  @error('residence_id') is-invalid @enderror" wire:model="residence_id" >
-                                    <option value="">Selectionner</option>
+                                    <option value="">Select</option>
                                     @foreach ($residences as $res)
                                         <option value="{{ $res->id }}">{{ $res->name }}</option>
                                     @endforeach
@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Ajouter
+                            <i class="fa fa-dot-circle-o"></i> Add
                         </button>
                     </div>
                 </form>

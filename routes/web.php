@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Home;
 use App\Http\Livewire\Admin\DashbordComponent;
+use App\Http\Livewire\Admin\Donations\ListDonationComponent;
 use App\Http\Livewire\Admin\GestionAgent\AjouterAgent;
 use App\Http\Livewire\Admin\GestionAgent\ListeAgent;
 use App\Http\Livewire\Admin\GestionArticle\ArticleAddComponent;
@@ -33,6 +34,7 @@ Route::get('/',[Home::class,'index']);
 Route::get('/donate/{id}',DonateComponent::class)->name('donate');
 Route::post('logout',[Home::class,'logout'])->name('logout');
 
+Route::post('/donate',[Home::class,'storeDonation'])->name('donation');
 
 Route::middleware(['guest:web'])->group(function(){
     Route::view('/login','Auth.login')->name('login');
@@ -54,9 +56,17 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/chefderesidence/add',AjouterAgent::class)->name('chefderesidence.add');
     Route::get('/chefderesidence/list',ListeAgent::class)->name('chefderesidence.list');
 
+    Route::get('/donations/list',ListDonationComponent::class)->name('donations.list');
+
+
+
 
 });
-Route::prefix('gerant')->name('gerant.')->group(function(){
+Route::prefix('agent')->name('agent.')->group(function(){
     Route::get('/dashboard',DashbordComponent::class)->name('dashboard');
+
+    Route::get('/article/add',ArticleAddComponent::class)->name('article.add');
+    Route::get('/article/list',ArticleListComponent::class)->name('article.list');
+    Route::get('/article/edit/{slug}',ArticleUpdateComponent::class)->name('article.edit');
 
 });

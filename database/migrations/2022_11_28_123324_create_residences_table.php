@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('adresse');
             $table->mediumText('description');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

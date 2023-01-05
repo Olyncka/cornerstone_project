@@ -3,8 +3,6 @@
         <div class="col-md-12">
             <div class="overview-wrap">
                 <h2 class="title-1">Add Residence</h2>
-                <button class="au-btn au-btn-icon au-btn--blue">
-                    <i class="zmdi zmdi-plus"></i>add item</button>
             </div>
         </div>
     </div>
@@ -12,7 +10,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Ajouter une Residence</strong>
+                    <strong>Add Residence</strong>
                 </div>
                 <form wire:submit.prevent="addResidence()" class="form-horizontal">
                     <div class="card-body card-block">
@@ -52,7 +50,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Submit
+                            <i class="fa fa-dot-circle-o"></i> Add
                         </button>
                         <button type="reset" class="btn btn-danger btn-sm">
                             <i class="fa fa-ban"></i> Reset

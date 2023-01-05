@@ -21,16 +21,17 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--green">
                         <h2 class="number">{{ $residencesCount }}</h2>
-                        <span class="desc">Tous les residences</span>
+                        <span class="desc">All Residences</span>
                         <div class="icon">
-                            <i class="zmdi zmdi-account-o"></i>
+                            {{-- <i class="zmdi zmdi-account-o"></i> --}}
+                            <i class="fa-duotone fa-hands-holding-dollar"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--orange">
                         <h2 class="number">{{ $usersCount }}</h2>
-                        <span class="desc">Tous les utilisateurs</span>
+                        <span class="desc">All Program Managers</span>
                         <div class="icon">
                             <i class="zmdi zmdi-shopping-cart"></i>
                         </div>
@@ -39,7 +40,7 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--blue">
                         <h2 class="number">{{ $itemsCount }}</h2>
-                        <span class="desc">Tous les articles</span>
+                        <span class="desc">All Needs</span>
                         <div class="icon">
                             <i class="zmdi zmdi-calendar-note"></i>
                         </div>
@@ -48,9 +49,10 @@
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--red">
                         <h2 class="number">{{ $donatorsCount }}</h2>
-                        <span class="desc">Tous les donateurs</span>
+                        <span class="desc">All Donors</span>
                         <div class="icon">
-                            <i class="zmdi zmdi-money"></i>
+                            {{-- <i class="zmdi zmdi-money"></i> --}}
+                            <i class="fas fa-donate"></i>
                         </div>
                     </div>
                 </div>

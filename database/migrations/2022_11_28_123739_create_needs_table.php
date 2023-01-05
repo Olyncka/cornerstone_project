@@ -18,6 +18,9 @@ return new class extends Migration
             $table->foreignId('item_id')->constrained();
             $table->foreignId('residence_id')->constrained();
             $table->integer('quantity');
+            $table->date('datelivraison');
+            $table->boolean('status')->default(0);
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

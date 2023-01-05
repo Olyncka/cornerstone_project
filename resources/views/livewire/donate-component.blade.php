@@ -36,89 +36,101 @@
         </ul> --}}
        </div>
        <div class="col-md-6 ">
-        <h4>Please Fill out this form for your donations</h4>
-        <form>
-            <!-- <div class="form-group">
-              <label for="exampleFormControlInput1">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div> -->
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">1. Select a Residence</label>
-              {{-- <select class="form-control" id="exampleFormControlSelect1" >
-                <option>-- select a residence--</option>
-                @foreach ($residences as $item)
-                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                @endforeach
-              </select> --}}
-              <input type="text" wire:model="name" class="form-control" disabled>
-            </div>
-            <!-- <div class="form-group">
-              <label for="exampleFormControlSelect2">Example multiple select</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div> -->
-            <div class="row">
-                {{-- <div class="col-sm-6">
-                    <div class="form-group mb-3">
-                        <label for="item">Item(s) donated</label>
-                        <input type="text" class="form-control" wire:model="item.0"  id="item">
-                      </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group mb-3">
-                        <label for="quantity">Quantity</label>
-                        <input type="number" class="form-control" wire:model="quantity.0" id="quantity">
-                    </div>
-                </div> --}}
-                <div class="col-md-2" wire:ignore>
-                    <button class="btn text-white btn-info btn-sm m-3" wire:click.prevent="fillItem">Ajouter</button>
-                </div>
-            </div>
+           <h4>Please Fill out this form for your donations</h4>
+           <form action="{{ route('donation') }}" method="POST">
+               @csrf
+               <input type="text" hidden value="{{ $residence_id }}" name="residence_id">
+               <div class="form-group">
+                 <label for="exampleFormControlSelect1">Select a Residence</label>
+                 <input type="text" wire:model="name" name class="form-control" disabled>
+               </div>
+                   <table wire:ignore>
+                       <thead>
+                           <th>Article</th>
+                           <th>Quantity</th>
+                           <th>Date of Delevery</th>
+                           <th><a href="javascript:void(0)" class="btn btn-success" id="addRow">+</a></th>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>
+                                   <select class="form-control m-3" name="item_id[]"  id="">
+                                       <option value="">Select</option>
+                                       @foreach ($itemsDB as $item)
+                                           <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                       @endforeach
+                                   </select>
+                               </td>
+                               <td><input type="number" name="quantity[]" class="form-control m-3"  id="quantity"></td>
+                               <td><input type="date"  class="form-control m-3" name="don_date[]" id="inputEmail3" placeholder="Date Livraison"></td>
 
-                <table>
-                    @foreach ($itemsForm as $item)
-                        <td>{{ $item }}</td>
-                    @endforeach
+                               <td><a href="javascript:void(0)" class="btn btn-danger removeRow">-</a></td>
 
-                </table>
 
-            <label> Date</label>
-            <div class="form-group row mb-3" >
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Date </label>
-                <div class="col-sm-10">
-                  <input type="date"  class="form-control" wire:model="don_date" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <label>4. Donor Informations</label>
-            <div class="form-group row mb-3" >
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                  <input type="text"  class="form-control" wire:model="don_name" id="inputEmail3" placeholder="John Doe">
-                </div>
-            </div>
-            <div class="form-group row mb-3" >
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email"  class="form-control" wire:model="don_email" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-group row mb-3">
-                <label for="inputPassword3"  class="col-sm-2 col-form-label">Phone number</label>
-                <div class="col-sm-10">
-                  <input type="tel"  class="form-control" wire:model="don_phone" id="inputPassword3" placeholder="te:+125346788">
-                </div>
-            </div>
-            <button type="submit button" class="btn btn-primary">Envoyer</button>
-        </form>
+                               </td>
+                           </tr>
+                       </tbody>
+                   </table>
+               <label> Donor Informations</label>
+               <div class="form-group row m-3" >
+                   <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                   <div class="col-sm-10">
+                     <input type="text"  class="form-control" name="don_name" id="inputEmail3" placeholder="John Doe">
+                   </div>
+               </div>
+               <div class="form-group row m-3" >
+                   <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                   <div class="col-sm-10">
+                     <input type="email"  class="form-control" name="don_email" id="inputEmail3" placeholder="Email">
+                   </div>
+               </div>
+               <div class="form-group row m-3">
+                   <label for="inputPassword3"  class="col-sm-2 col-form-label">Phone number</label>
+                   <div class="col-sm-10">
+                     <input type="tel"  class="form-control" name="don_phone" id="inputPassword3" placeholder="te:+125346788">
+                   </div>
+               </div>
+               <button type="submit" class="btn btn-primary m-3">Send</button>
+           </form>
 
        </div>
 
+
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('thead').on('click','#addRow',function(){
+
+            var tr= "<tr>"+
+                        "<td>"+
+                            "<select class='form-control'name='item_id[]''>"+
+                                "<option value=''>Select</option>"+
+                                "@foreach ($itemsDB as $item)"+
+                                    "<option value='{{ $item->id }}'>{{ $item->name }}</option>"+
+                                "@endforeach"+
+                            "</select>"+
+                        "</td>"+
+                        "<td><input type='number' name='quantity[]' class='form-control' id='quantity'></td>"+
+                        "<td><input type='date'  class='form-control' name='don_date[]''  placeholder='Date Livraison'></td>"+
+                        "<td><a href='javascript:void(0)'' class='btn btn-danger removeRow'>-</a></td>"+
+                    "</tr>"
+            $('tbody').append(tr);
+        });
+
+        $('tbody').on('click','.removeRow',function(){
+            $(this).parent().parent().remove();
+        });
+
+    </script>
+
       @livewireScripts
+      @push('scripts')
+
+
+      @endpush
+      <script>
+
+    </script>
+
 </div>

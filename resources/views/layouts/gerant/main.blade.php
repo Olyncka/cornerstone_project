@@ -63,30 +63,6 @@
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Residences</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="{{ route('admin.residence.add') }}">Add Residence</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.residence.list') }}">List of Residences</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Program manager</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="{{ route('admin.chefderesidence.add') }}">Add a Program manager</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.article.list') }}">List of Program manager</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Needs</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
@@ -116,30 +92,6 @@
                         <li>
                             <a href="{{ route('admin.dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-vihara"></i>Residences</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="{{ route('admin.residence.add') }}">Add a Residence</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.residence.list') }}">List of Residences</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-users"></i>Program Manager</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="{{ route('admin.chefderesidence.add') }}">add Program manager</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('admin.article.list') }}">ListProgram manager</a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">

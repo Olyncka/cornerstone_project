@@ -17,6 +17,8 @@ class DonateComponent extends Component
     public $residence_id;
     public $item_id;
     public $itemsForm=[];
+    public $itemsDB;
+    public $itemsData=[''];
     public $quantity;
     public $i = 1;
     public $don_name;
@@ -24,32 +26,29 @@ class DonateComponent extends Component
     public $don_phone;
     public $don_date;
 
+    public $inputs=[];
+    public $inputsCount=1;
+
     public function mount($id)
     {
-
         $res=Residence::where('id',$id)->first();
         $this->name =$res->name;
         $this->residence_id =$res->id;
-        // $this->fill([
-        //     'itemsForm' => collect([[
-        //         'quantity' => $this->quantity,
-        //         'item_id' => $this->item_id,
-        //         ]]),
-        // ]);
+        $this->itemsDB=Article::where('residence_id',$this->residence_id)->get();
     }
 
     public function fillItem()
     {
-        // $itemsForm=[
-        //     'options' => $this->quantity,
-        //     'value' => $this->item_id,
-
-        // ];
-        $itemsForm=[
-            'quantity' => $this->quantity,
-            'item_id' => $this->item_id,
-        ];
+        // $this->itemsData[]='';
+        $this->inputsCount++;
     }
+    public function removeItem()
+    {
+        // unset($this->itemsData[$index]);
+        // $this->itemsData=array_values($this->itemsData);
+        $this->inputsCount--;
+    }
+
 
 
 

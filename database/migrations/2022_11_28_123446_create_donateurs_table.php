@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('email');
             $table->string('adresse');
-            $table->foreignId('user_id')->constrained();
-
+            // $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

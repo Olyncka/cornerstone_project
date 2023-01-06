@@ -14,6 +14,6 @@ class DonateComponent extends Component
     }
     public function render()
     {
-        return view('livewire.admin.donate-component');
+        return view('livewire.admin.donate-component')->layout('layouts.admin.main');
     }
 }

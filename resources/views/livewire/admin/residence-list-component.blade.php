@@ -31,7 +31,7 @@
                                     <td class="text-center"><img src="{{ $item->image }}" width="50px" alt=""> </td>
                                     <td class="text-center">{{ $item->name }}</td>
                                     <td class="text-center">{{ $item->adress }}</td>
-                                    <td class="text-center">{!! $item->description !!}</td>
+                                    <td class="text-center">{!! Str::limit($item->description, 120) !!}...</td>
                                     <td class="text-center">
                                         <div class="table-data-feature">
                                             <a class="item" href="{{ route('admin.residence.edit',$item->slug) }}">

@@ -8,6 +8,7 @@ use App\Models\Needs;
 use App\Models\Residence;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class Home extends Controller
 {
@@ -24,7 +25,6 @@ class Home extends Controller
     }
     public function storeDonation(Request $request)
     {
-
         $residence_id = $request->residence_id;
         $item_id = $request->item_id;
         $quantity = $request->quantity;
@@ -39,22 +39,21 @@ class Home extends Controller
         //     'adresse'=>$don_phone,
 
         // ]);
-        Donateur::create([
-            'nom'=>$don_name,
-            'email'=>$don_email,
-            'adresse'=>$don_phone,
+        
 
-        ]);
-
-        for($i=0;$i<count($item_id);$i++){
-            $datasave=[
+        for($i=0; $i < count($item_id); $i++){
+           DB::table('needs')->insert([
                 'residence_id'=>$residence_id,
                 'item_id'=>$item_id,
                 'quantity'=>$quantity,
                 'datelivraison'=>$don_date
-            ];
-            Needs::create($datasave);
+            ]);
         }
+        Donateur::insert([
+            'nom'=>$don_name,
+            'email'=>$don_email,
+            'adresse'=>$don_phone,
+        ]);
         return redirect()->back();
     }
 }

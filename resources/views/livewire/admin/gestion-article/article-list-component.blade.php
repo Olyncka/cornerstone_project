@@ -39,7 +39,7 @@
                                     </td>
                                 </tr>
                             @empty
-                                <td class="text-center">Pas de item</td>
+                                <td class="text-center">No Needs</td>
                             @endforelse
 
                         </tbody>

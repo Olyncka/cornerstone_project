@@ -2,12 +2,16 @@
 
 namespace App\Http\Livewire\Admin\Donations;
 
+use App\Models\Needs;
 use Livewire\Component;
 
 class ListDonationComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.donations.list-donation-component');
+        $data=[
+            "donations"=>Needs::all(),
+        ];
+        return view('livewire.admin.donations.list-donation-component',$data)->layout('layouts.admin.main');;
     }
 }

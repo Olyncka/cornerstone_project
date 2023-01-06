@@ -15,6 +15,7 @@ use App\Http\Livewire\Admin\ResidenceUpdateComponent;
 use App\Http\Livewire\AuthForm;
 use App\Http\Livewire\DonateComponent;
 use App\Http\Livewire\Gerant\DashboardComponent;
+use App\Http\Livewire\Gerant\Donations\ListDonationComponent as DonationsListDonationComponent;
 use App\Http\Livewire\Gerant\GestionArticle\ArticleAddComponent as GestionArticleArticleAddComponent;
 use App\Http\Livewire\Gerant\GestionArticle\ArticleListComponent as GestionArticleArticleListComponent;
 use App\Http\Livewire\Gerant\GestionArticle\ArticleUpdateComponent as GestionArticleArticleUpdateComponent;
@@ -72,5 +73,8 @@ Route::post('/donate',[Home::class,'storeDonation'])->name('donation');
             Route::get('/article/add',GestionArticleArticleAddComponent::class)->name('article.add');
             Route::get('/article/list',GestionArticleArticleListComponent::class)->name('article.list');
             Route::get('/article/edit/{slug}',GestionArticleArticleUpdateComponent::class)->name('article.edit');
+
+            Route::get('/donations/list',DonationsListDonationComponent::class)->name('donations.list');
+
         });
     });

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('needs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('item_id')->constrained();
+            $table->foreignId('donateur_id')->constrained();
             $table->foreignId('residence_id')->constrained();
             $table->integer('quantity');
             $table->date('datelivraison');

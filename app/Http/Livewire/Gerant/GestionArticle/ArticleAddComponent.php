@@ -20,7 +20,7 @@ class ArticleAddComponent extends Component
     {
         // dd('hiiii');
         $this->validate([
-            'name'=>'required',
+            'name'=>'required|unique:articles,name',
             'slug'=>'required|unique:residences,slug',
 
         ],[

@@ -13,7 +13,7 @@ class DashboardComponent extends Component
     {
         $data=[
             "itemsCount"=>Article::where('user_id',Auth::user()->id)->count(),
-            "donatorsCount"=>Donateur::where('user_id',Auth::user()->id)->count(),
+            // "donatorsCount"=>Donateur::where('user_id',Auth::user()->id)->count(),
 
         ];
         return view('livewire.gerant.dashboard-component',$data)->layout('layouts.gerant.main');

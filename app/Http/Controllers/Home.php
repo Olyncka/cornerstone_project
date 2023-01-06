@@ -24,8 +24,6 @@ class Home extends Controller
     }
     public function storeDonation(Request $request)
     {
-        // $inputs = $request->all();
-        // $products = $inputs["products"];
 
         $residence_id = $request->residence_id;
         $item_id = $request->item_id;
@@ -35,34 +33,24 @@ class Home extends Controller
         $don_email = $request->don_email;
         $don_phone = $request->don_phone;
 
-        // $donateur_id=Donateur::insertGetId([
-        //     'nom'=>$don_name,
-        //     'email'=>$don_email,
-        //     'adresse'=>$don_phone,
-
-        // ]);
-        // Donateur::insert([
-        //     'nom'=>$don_name,
-        //     'email'=>$don_email,
-        //     'adresse'=>$don_phone,
-        // ]);
-        
+        $donateur_id=Donateur::insertGetId([
+            'nom'=>$don_name,
+            'email'=>$don_email,
+            'adresse'=>$don_phone,
+        ]);        
 
         for($i=0;$i<count($item_id);$i++){
            
             $datasave=[
+                'donateur_id'=>$donateur_id,
                 'residence_id'=>$residence_id,
-                'item_id'=>implode(",",$item_id),
-                'quantity'=>implode(",",$quantity),
-                'datelivraison'=>implode(",",$don_date)
+                'item_id'=>$item_id[$i],
+                'quantity'=>$quantity[$i],
+                'datelivraison'=>$don_date[$i]
             ];
             Needs::insert($datasave);
-            // return $datasave;
             
         }
-        // foreach($this->datasave as $data){
-        //     Needs::insert([$data]);
-        // }
         return redirect()->back();
     }
 }

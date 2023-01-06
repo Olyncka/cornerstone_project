@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-12 col-lg-6">
                     <div class="statistic__item statistic__item--red">
-                        <h2 class="number">{{ $donatorsCount }}</h2>
+                        <h2 class="number">150</h2>
                         <span class="desc">All Donors</span>
                         <div class="icon">
                             {{-- <i class="zmdi zmdi-money"></i> --}}

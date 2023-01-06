@@ -66,10 +66,10 @@
                                 <i class="fas fa-copy"></i>Needs</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.article.add') }}">Add a need</a>
+                                    <a href="{{ route('agent.article.add') }}">Add a need</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.article.list') }}">List of needs</a>
+                                    <a href="{{ route('agent.article.list') }}">List of needs</a>
                                 </li>
                             </ul>
                         </li>
@@ -98,16 +98,16 @@
                                 <i class="fas fa-copy"></i>Needs</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.article.add') }}">add need</a>
+                                    <a href="{{ route('agent.article.add') }}">add need</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.article.list') }}">List needs</a>
+                                    <a href="{{ route('agent.article.list') }}">List needs</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
 
-                                <a href="{{ route('admin.donations.list') }}"><i class="fas fa-copy"></i> List Donations</a>
+                                <a href="{{ route('agent.donations.list') }}"><i class="fas fa-copy"></i> List Donations</a>
                         </li>
                     </ul>
                 </nav>

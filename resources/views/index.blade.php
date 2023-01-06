@@ -69,7 +69,7 @@
                   <p class="card-text">
                     Urgent Needs:
                     <ul>
-                        @foreach ($articles as $article)
+                        @foreach ($item->article as $article)
                             <li>{{ $article->name }}</li>
                         @endforeach
                     </ul>

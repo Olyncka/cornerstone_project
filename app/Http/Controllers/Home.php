@@ -8,15 +8,14 @@ use App\Models\Needs;
 use App\Models\Residence;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class Home extends Controller
 {
     public function index()
     {
         $residences=Residence::all();
-        $articles=Article::with("residences")->get();
-        return view('index',compact('residences','articles'));
+        // $articles=Article::where('residence_id',$residences->id)->get();
+        return view('index',compact('residences'));
     }
 
     public function logout(){
@@ -25,6 +24,9 @@ class Home extends Controller
     }
     public function storeDonation(Request $request)
     {
+        // $inputs = $request->all();
+        // $products = $inputs["products"];
+
         $residence_id = $request->residence_id;
         $item_id = $request->item_id;
         $quantity = $request->quantity;
@@ -39,21 +41,28 @@ class Home extends Controller
         //     'adresse'=>$don_phone,
 
         // ]);
+        // Donateur::insert([
+        //     'nom'=>$don_name,
+        //     'email'=>$don_email,
+        //     'adresse'=>$don_phone,
+        // ]);
         
 
-        for($i=0; $i < count($item_id); $i++){
-           DB::table('needs')->insert([
+        for($i=0;$i<count($item_id);$i++){
+           
+            $datasave=[
                 'residence_id'=>$residence_id,
-                'item_id'=>$item_id,
-                'quantity'=>$quantity,
-                'datelivraison'=>$don_date
-            ]);
+                'item_id'=>implode(",",$item_id),
+                'quantity'=>implode(",",$quantity),
+                'datelivraison'=>implode(",",$don_date)
+            ];
+            Needs::insert($datasave);
+            // return $datasave;
+            
         }
-        Donateur::insert([
-            'nom'=>$don_name,
-            'email'=>$don_email,
-            'adresse'=>$don_phone,
-        ]);
+        // foreach($this->datasave as $data){
+        //     Needs::insert([$data]);
+        // }
         return redirect()->back();
     }
 }

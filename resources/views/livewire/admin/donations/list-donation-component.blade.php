@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
-                <h2 class="title-1">All Residences</h2>
+                <h2 class="title-1">All Donations</h2>
 
             </div>
         </div>
@@ -11,7 +11,7 @@
         <div class="col-lg-12">
             <!-- TOP CAMPAIGN-->
             <div class="top-campaign">
-                <h3 class="title-3 m-b-30">All Residences</h3>
+                <h3 class="title-3 m-b-30">All Donations</h3>
                 <div class="table-responsive">
                     <table class="table table-top-campaign">
                         <thead>
@@ -20,24 +20,25 @@
                                 <th class="text-center">Residence</th>
                                 <th class="text-center">Need</th>
                                 <th class="text-center">Donor</th>
+                                <th class="text-center">Quantity</th>
                                 <th colspan="2" class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($donations as $key => $item)
+                            @forelse ($donations as  $item)
                                 <tr>
-                                    <td class="text-center">{{ ++$key }}</td>
+                                    <td class="text-center"># {{ $item->id }}</td>
                                     <td class="text-center">
-                                        {{-- {{ optional($item->residences)->name }} --}}
                                         {{ $item->residences->name }}
                                     </td>
                                     <td class="text-center">
-                                        {{-- {{ optional($item->articles)->name }} --}}
                                         {{ $item->articles->name }}
                                     </td>
                                     <td class="text-center">
-                                        {{-- {{ optional($item->donateurs)->nom }} --}}
                                         {{ $item->donateurs->nom}}
+                                    </td>
+                                    <td class="text-center">
+                                        {{ $item->quantity}}
                                     </td>
                                     <td class="text-center">
                                         <livewire:donations.toogle-button :item="$item" :name="'status'" :key="'status'.$item->id"/>

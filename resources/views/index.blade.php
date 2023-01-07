@@ -47,6 +47,8 @@
       </nav>
       <div class="container">
         <div class="row text-justify align-itens-center mx-5">
+
+            <img src="{{ asset('images/logo.png') }}" width="25px" height="100px" alt="">
             <h3 class="my-4">Donations</h3>
             <p>
                 We accept all in-kind donations at our office at 314 Booth Street, donations are stored centrally and distributed to all Cornerstone locations, including our emergency shelter. We appreciate your support and are very grateful that you have taken the time to donate to us.
@@ -83,6 +85,6 @@
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
-   
+
   </body>
 </html>

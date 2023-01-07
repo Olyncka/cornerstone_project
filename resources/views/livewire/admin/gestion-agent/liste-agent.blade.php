@@ -19,8 +19,7 @@
                                 <th class="text-center">Id</th>
                                 <th class="text-center">Image</th>
                                 <th class="text-center">Name</th>
-                                <th class="text-center">Adresse</th>
-                                <th class="text-center">Description</th>
+                                <th class="text-center">Email</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -30,8 +29,7 @@
                                     <td class="text-center">{{ $item->id }}</td>
                                     <td class="text-center"><img src="{{ $item->image }}" width="50px" alt=""> </td>
                                     <td class="text-center">{{ $item->name }}</td>
-                                    <td class="text-center">{{ $item->adress }}</td>
-                                    <td class="text-center">{!! Str::limit($item->description, 120) !!}...</td>
+                                    <td class="text-center">{{ $item->email }}</td>
                                     <td class="text-center">
                                         <div class="table-data-feature">
                                             <a class="item" href="{{ route('admin.chefderesidence.edit',$item->id) }}">
@@ -44,7 +42,7 @@
                                     </td>
                                 </tr>
                             @empty
-                                <td class="text-center">Pas de residences</td>
+                                <td class="text-center">No Managers</td>
                             @endforelse
 
                         </tbody>

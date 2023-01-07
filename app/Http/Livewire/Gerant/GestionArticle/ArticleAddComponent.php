@@ -2,9 +2,12 @@
 
 namespace App\Http\Livewire\Gerant\GestionArticle;
 
+use App\Models\Article;
 use App\Models\Residence;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Illuminate\Support\Str;
+
 
 class ArticleAddComponent extends Component
 {
@@ -15,6 +18,10 @@ class ArticleAddComponent extends Component
     public function generateslug()
     {
         $this->slug = Str::slug($this->name);
+    }
+    public function mount()
+    {
+        $this->residence_id = Residence::where('user_id',Auth::user()->id)->first();
     }
     public function addItem()
     {
@@ -46,7 +53,7 @@ class ArticleAddComponent extends Component
     public function render()
     {
         $data=[
-            "residences"=>Residence::where('user_id',Auth::user()->id)->get(),
+            "reside"=>Residence::where('user_id',Auth::user()->id)->get(),
         ];
         return view('livewire.gerant.gestion-article.article-add-component',$data)->layout('layouts.gerant.main');
     }

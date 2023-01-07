@@ -141,7 +141,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ Auth::user()->name }}" alt="John Doe" />
+                                                        <img src="{{ Auth::user()->image }}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

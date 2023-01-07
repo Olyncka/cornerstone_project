@@ -3,8 +3,6 @@
         <div class="col-md-12">
             <div class="overview-wrap">
                 <h2 class="title-1">Add Item</h2>
-                <button class="au-btn au-btn-icon au-btn--blue">
-                    <i class="zmdi zmdi-plus"></i>add item</button>
             </div>
         </div>
     </div>
@@ -12,7 +10,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Ajouter un Article</strong>
+                    <strong>Edit a Need</strong>
                 </div>
                 <form wire:submit.prevent="updateArticle()" class="form-horizontal">
                     <div class="card-body card-block">

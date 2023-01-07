@@ -40,7 +40,7 @@
                                         {{ $item->donateurs->nom}}
                                     </td>
                                     <td class="text-center">
-                                        <livewire:donations.toogle-button :item="$item" :name="'featured'" :key="'featured'.$item->id"/>
+                                        <livewire:donations.toogle-button :item="$item" :name="'status'" :key="'status'.$item->id"/>
                                     </td>
                                     {{-- <td class="text-center">
                                         <div class="table-data-feature">

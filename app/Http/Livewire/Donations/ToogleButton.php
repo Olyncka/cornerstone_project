@@ -3,17 +3,18 @@
 namespace App\Http\Livewire\Donations;
 
 use App\Models\Donateur;
+use App\Models\Needs;
 use Livewire\Component;
 
 class ToogleButton extends Component
 {
-    public Donateur $item;
+    public Needs $item;
     public string $name;
-    public bool $featured;
+    public bool $status;
 
     public function mount()
     {
-        $this->featured = $this->item->getAttribute('featured');
+        $this->status = $this->item->getAttribute('status');
     }
     public function render()
     {

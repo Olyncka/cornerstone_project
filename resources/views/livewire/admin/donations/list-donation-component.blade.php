@@ -17,26 +17,30 @@
                         <thead>
                             <tr>
                                 <th class="text-center">Id</th>
-                                <th class="text-center">Image</th>
-                                <th class="text-center">Name</th>
-                                <th class="text-center">Adresse</th>
-                                <th class="text-center">Description</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Residence</th>
+                                <th class="text-center">Need</th>
+                                <th class="text-center">Donor</th>
+                                <th colspan="2" class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($donations as $item)
+                            @forelse ($donations as $key => $item)
                                 <tr>
-                                    <td class="text-center">{{ $item->id }}</td>
-                                    <td class="text-center"><img src="{{ $item->residence->name }}" width="50px" alt=""> </td>
-                                    <td class="text-center">{{ $item->article->name }}</td>
-                                    <td class="text-center">{{ $item->donator->name }}</td>
+                                    <td class="text-center">{{ ++$key }}</td>
                                     <td class="text-center">
-                                        <label class="switch switch-default switch-pill switch-primary mr-2">
-                                            <input type="checkbox" class="switch-input" checked="true">
-                                            <span class="switch-label"></span>
-                                            <span class="switch-handle"></span>
-                                          </label>
+                                        {{-- {{ optional($item->residences)->name }} --}}
+                                        {{ $item->residences->name }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{-- {{ optional($item->articles)->name }} --}}
+                                        {{ $item->articles->name }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{-- {{ optional($item->donateurs)->nom }} --}}
+                                        {{ $item->donateurs->nom}}
+                                    </td>
+                                    <td class="text-center">
+                                        <livewire:donations.toogle-button :item="$item" :name="'featured'" :key="'featured'.$item->id"/>
                                     </td>
                                     {{-- <td class="text-center">
                                         <div class="table-data-feature">

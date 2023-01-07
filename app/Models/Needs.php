@@ -24,20 +24,20 @@ class Needs extends Model
         });
     }
     protected $guarded = [];
-    
+
     protected $fillable = [
         'residence_id',
         'item_id',
         'quantity',
     ];
-    public function article(){
-        return $this->hasMany(Article::class,'item_id');
+    public function articles(){
+        return $this->belongsTo(Article::class,'item_id','id');
     }
-    public function residence(){
-        return $this->belongsTo(Residence::class);
+    public function residences(){
+        return $this->belongsTo(Residence::class,'residence_id');
     }
-    public function donator(){
-        return $this->belongsTo(Donateur::class);
+    public function donateurs(){
+        return $this->belongsTo(Donateur::class,'donateur_id');
     }
 
 }

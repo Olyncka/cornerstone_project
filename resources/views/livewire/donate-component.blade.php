@@ -22,7 +22,11 @@
         <h4>Urgents Needs</h4>
         <ul>
             @foreach ($items as $item)
-                <li>{{ $item->name }}</li>
+                @if ($item->quantity ==0)
+                    <li><u>{{ $item->name }} ({{ $item->quantity }})</u></li>
+                @else
+                    <li>{{ $item->name }} ({{ $item->quantity }})</li>
+                @endif
             @endforeach
         </ul>
         {{-- <p>Please note we only serve adult women, and due to limited capacity and storage we do not accept the following items.</p>

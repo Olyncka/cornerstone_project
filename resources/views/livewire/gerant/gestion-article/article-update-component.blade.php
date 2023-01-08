@@ -22,10 +22,17 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="slug" class=" form-control-label">slug</label>
+                            <label for="slug" class=" form-control-label">Slug</label>
                             <input type="text" id="slug" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('slug'){{ $message }}@enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity" class=" form-control-label">Quantity</label>
+                            <input type="number" id="quantity" wire:model="quantity" placeholder="Enter the Quantity" class="form-control @error('quantity') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                @error('quantity'){{ $message }}@enderror
                             </div>
                         </div>
                     </div>

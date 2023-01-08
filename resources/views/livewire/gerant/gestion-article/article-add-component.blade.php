@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
-                <h2 class="title-1">Ajouter Item</h2>
+                <h2 class="title-1">Add a Need</h2>
 
             </div>
         </div>
@@ -11,7 +11,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Ajouter une Residence</strong>
+                    <strong>Add a Need</strong>
                 </div>
                 <form wire:submit.prevent="addItem()" class="form-horizontal">
                     <div class="card-body card-block">
@@ -22,23 +22,30 @@
                                 @error('name'){{ $message }}@enderror
                             </div>
                         </div>
-                        <div class="form-group" hidden>
-                            <label for="slug" class=" form-control-label">slug</label>
-                            <input type="text" id="slug" hidden wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
+                        <div class="form-group">
+                            <label for="slug" class=" form-control-label">Slug</label>
+                            <input type="text" id="slug" disabled wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('slug'){{ $message }}@enderror
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="residence" class=" form-control-label">Residence</label>
-                            {{-- <input type="text" id="residence" wire:model="residence_id" placeholder="Enter the Residence residence." class="form-control @error('residence') is-invalid @enderror"> --}}
+                            <label for="quantity" class=" form-control-label">Quantity</label>
+                            <input type="number" id="quantity" wire:model="quantity" placeholder="Enter the Quantity" class="form-control @error('quantity') is-invalid @enderror">
+                            <div class="invalid-feedback">
+                                @error('quantity'){{ $message }}@enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="residence" hidden class=" form-control-label">Residence</label>
+                            <input type="text" id="residence" hidden wire:model="residence_id" placeholder="Enter the Residence residence." class="form-control @error('residence') is-invalid @enderror">
 
-                                <select name="" class="form-control" wire:model="residence_id" id="">
+                                {{-- <select name="" class="form-control" wire:model="residence_id" id="">
                                     <option value="">Select</option>
                                     @foreach ($reside as $item)
                                         <option class="form-control" value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
-                                </select>
+                                </select> --}}
                             <div class="invalid-feedback">
                                 @error('residence_id'){{ $message }}@enderror
                             </div>

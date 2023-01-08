@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
-                <h2 class="title-1">Add Item</h2>
+                <h2 class="title-1">Edit a Need</h2>
             </div>
         </div>
     </div>
@@ -22,16 +22,23 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="slug" class=" form-control-label">slug</label>
-                            <input type="text" id="slug" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
+                            <label for="slug" class="form-control-label">slug</label>
+                            <input type="text" id="slug" disabled wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('slug'){{ $message }}@enderror
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="quantity" class=" form-control-label">Quantity</label>
+                        <input type="number" id="quantity" wire:model="quantity" placeholder="Enter the Quantity" class="form-control @error('quantity') is-invalid @enderror">
+                        <div class="invalid-feedback">
+                            @error('quantity'){{ $message }}@enderror
+                        </div>
+                    </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Submit
+                            <i class="fa fa-dot-circle-o"></i> Update
                         </button>
                         <button type="reset" class="btn btn-danger btn-sm">
                             <i class="fa fa-ban"></i> Reset

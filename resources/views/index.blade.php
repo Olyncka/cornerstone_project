@@ -63,10 +63,10 @@ We appreciate your support and are very grateful that you have taken the time to
                     Urgent Needs:
                     <ul>
                         @foreach ($item->article as $article)
-                            @if ($item->quantity ==0)
-                                <li><u>{{ $item->name }} ({{ $item->quantity }})</u></li>
+                            @if ($article->quantity ==0)
+                                <li style="text-decoration: line-through;"><wbr>{{ $article->name }} ({{ $article->quantity }})</wbr></li>
                             @else
-                                <li>{{ $item->name }} ({{ $item->quantity }})</li>
+                                <li>{{ $article->name }} ({{ $article->quantity }})</li>
                             @endif
                         @endforeach
                     </ul>

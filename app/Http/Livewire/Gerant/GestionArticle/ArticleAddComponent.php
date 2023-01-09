@@ -25,7 +25,6 @@ class ArticleAddComponent extends Component
         $res=Residence::where('user_id',Auth::user()->id)->first();
         // $this->name =$res->name;
         $this->residence_id =$res->id;
-        // dd($this->residence_id);
     }
     public function addItem()
     {

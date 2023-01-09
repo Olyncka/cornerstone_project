@@ -54,7 +54,7 @@ We appreciate your support and are very grateful that you have taken the time to
 
         </div>
         <div class="row m-5">
-          @foreach ($residences as $item)
+          @foreach ($residences as $item)g
             <div class="card p-2 my-2 mx-2" style="width: 20rem;">
                 <img src="{{ $item->image }}" class="card-img-top" alt="...">
                 <div class="card-body">

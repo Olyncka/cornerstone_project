@@ -22,8 +22,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="slug" class=" form-control-label">slug</label>
-                            <input type="text" id="slug" wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
+                            <label for="slug" hidden class="form-control-label">slug</label>
+                            <input type="text" id="slug" hidden wire:model="slug" placeholder="Enter the Residence slug." class="form-control @error('slug') is-invalid @enderror">
                             <div class="invalid-feedback">
                                 @error('slug'){{ $message }}@enderror
                             </div>

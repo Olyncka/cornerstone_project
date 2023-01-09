@@ -63,7 +63,11 @@ We appreciate your support and are very grateful that you have taken the time to
                     Urgent Needs:
                     <ul>
                         @foreach ($item->article as $article)
-                            <li>{{ $article->name }}</li>
+                            @if ($item->quantity ==0)
+                                <li><u>{{ $item->name }} ({{ $item->quantity }})</u></li>
+                            @else
+                                <li>{{ $item->name }} ({{ $item->quantity }})</li>
+                            @endif
                         @endforeach
                     </ul>
                   </p>

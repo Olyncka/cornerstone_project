@@ -81,7 +81,7 @@
                                     <a href="{{ route('admin.chefderesidence.add') }}">Add a Program manager</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.article.list') }}">List of Program manager</a>
+                                    <a href="{{ route('admin.chefderesidence.list') }}">List of Program manager</a>
                                 </li>
                             </ul>
                         </li>
@@ -137,7 +137,7 @@
                                     <a href="{{ route('admin.chefderesidence.add') }}">add Program manager</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.article.list') }}">ListProgram manager</a>
+                                    <a href="{{ route('admin.chefderesidence.list') }}">List Program manager</a>
                                 </li>
                             </ul>
                         </li>

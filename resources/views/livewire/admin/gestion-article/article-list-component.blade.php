@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="overview-wrap">
-                <h2 class="title-1">Add Residence</h2>
+                <h2 class="title-1">List Of Needs</h2>
 
             </div>
         </div>
@@ -18,6 +18,7 @@
                                 <th class="text-center">Id</th>
                                 <th class="text-center">Name</th>
                                 <th class="text-center">Slug</th>
+                                <th class="text-center">Quantity</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -27,6 +28,7 @@
                                     <td class="text-center">{{ $item->id }}</td>
                                     <td class="text-center">{{ $item->name }}</td>
                                     <td class="text-center">{{ $item->slug }}</td>
+                                    <td class="text-center">{{ $item->quantity }}</td>
                                     <td class="text-center">
                                         <div class="table-data-feature">
                                             <a class="item" href="{{ route('admin.article.edit',$item->slug) }}">

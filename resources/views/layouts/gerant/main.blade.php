@@ -90,7 +90,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="{{ route('admin.dashboard') }}">
+                            <a href="{{ route('agent.dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li class="has-sub">
@@ -141,7 +141,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ Auth::user()->name }}" alt="John Doe" />
+                                                        <img src="{{ Auth::user()->image }}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

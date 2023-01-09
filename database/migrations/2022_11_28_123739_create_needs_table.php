@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->date('datelivraison');
             $table->boolean('status')->default(0);
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

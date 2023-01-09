@@ -22,10 +22,10 @@ class ArticleAddComponent extends Component
     }
     public function mount()
     {
-        $res=Residence::where('user_id',Auth::user()->id)->first();
+        // $res=Residence::where('user_id',Auth::user()->id)->first();
+        $res  = Auth::user();
         // $this->name =$res->name;
-        $this->residence_id =$res->id;
-        // dd($this->residence_id);
+        $this->residence_id =$res->residence_id;
     }
     public function addItem()
     {

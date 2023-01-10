@@ -23,6 +23,11 @@ class ListDonationComponent extends Component
         $approve->status=1;
         $approve->save();
     }
+    public function cancel($id)
+    {
+        Needs::findOrFail($id)->delete();
+        $this->dispatchBrowserEvent('showerror',['message'=>'Cancelled SuccessFully']);
+    }
     public function render()
     {
         $data=[

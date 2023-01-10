@@ -37,10 +37,10 @@ class Home extends Controller
             'nom'=>$don_name,
             'email'=>$don_email,
             'adresse'=>$don_phone,
-        ]);        
+        ]);
 
         for($i=0;$i<count($item_id);$i++){
-           
+
             $datasave=[
                 'donateur_id'=>$donateur_id,
                 'residence_id'=>$residence_id,
@@ -49,8 +49,8 @@ class Home extends Controller
                 'datelivraison'=>$don_date[$i]
             ];
             Needs::insert($datasave);
-            
+
         }
-        return redirect()->back();
+        return redirect()->route('home');
     }
 }

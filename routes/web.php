@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[Home::class,'index']);
+Route::get('/',[Home::class,'index'])->name('home');
 
 Route::get('/donate/{id}',DonateComponent::class)->name('donate');
 Route::post('logout',[Home::class,'logout'])->name('logout');

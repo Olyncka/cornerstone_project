@@ -46,6 +46,8 @@
                                             <button class="btn btn-primary">Done</button>
                                         @else
                                             <a href="#" class="btn btn-success" wire:click="approve({{ $item->id }})">Approve</a>
+                                            <a href="#" class="btn btn-danger" wire:click="cancel({{ $item->id }})">Cancel</a>
+
                                         @endif
                                     </td>
                                     {{-- <td class="text-center">

@@ -47,14 +47,14 @@
       </nav>
       <div class="container">
         <div class="row text-justify align-itens-center mx-5">
-            <h3 class="my-4">Can you Donate?</h3>
+            <h3 class="my-4">Welcome to the Donation page</h3>
             <p>
 We appreciate your support and are very grateful that you have taken the time to donate to us.
             </p>
 
         </div>
         <div class="row m-5">
-          @foreach ($residences as $item)g
+          @foreach ($residences as $item)
             <div class="card p-2 my-2 mx-2" style="width: 20rem;">
                 <img src="{{ $item->image }}" class="card-img-top" alt="...">
                 <div class="card-body">

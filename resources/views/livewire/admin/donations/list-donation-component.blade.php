@@ -41,7 +41,12 @@
                                         {{ $item->quantity}}
                                     </td>
                                     <td class="text-center">
-                                        <livewire:donations.toogle-button :item="$item" :name="'status'" :key="'status'.$item->id"/>
+                                        {{-- <livewire:donations.toogle-button :item="$item" :name="'status'" :key="'status'.$item->id"/> --}}
+                                        @if($item->status == 1)
+                                            <button class="btn btn-primary">Done</button>
+                                        @else
+                                            <a href="#" class="btn btn-success" wire:click="approve({{ $item->id }})">Approve</a>
+                                        @endif
                                     </td>
                                     {{-- <td class="text-center">
                                         <div class="table-data-feature">

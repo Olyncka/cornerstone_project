@@ -199,8 +199,6 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                {{-- <a href="{{ route('logout') }}">
-                                                    <i class="zmdi zmdi-power"></i>Deconnexion</a> --}}
                                                     <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();" class="zmdi zmdi-power"><b> Deconnexion</b></a>

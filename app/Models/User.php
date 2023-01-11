@@ -45,6 +45,9 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsTo(Role::class,'role_id');
     }
+    public function residences(){
+        return $this->belongsTo(Residence::class,'residence_id');
+    }
 
     public function getImageAttribute($value)
     {

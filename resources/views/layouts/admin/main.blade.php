@@ -154,8 +154,7 @@
                             </ul>
                         </li>
                         <li>
-
-                                <a href="{{ route('admin.donations.list') }}"><i class="fas fa-copy"></i> List Donations</a>
+                            <a href="{{ route('admin.donations.list') }}"><i class="fas fa-copy"></i> List Donations</a>
                         </li>
                     </ul>
                 </nav>
@@ -180,7 +179,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ Auth::user()->image }}" alt="John Doe" />
+                                            <img src="{{ Auth::user()->image }}" alt="{{ Auth::user()->name }}" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
@@ -189,7 +188,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ Auth::user()->name }}" alt="John Doe" />
+                                                        <img src="{{ Auth::user()->image }}" alt="{{ Auth::user()->name }}" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -200,8 +199,6 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                {{-- <a href="{{ route('logout') }}">
-                                                    <i class="zmdi zmdi-power"></i>Deconnexion</a> --}}
                                                     <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();" class="zmdi zmdi-power"><b> Deconnexion</b></a>

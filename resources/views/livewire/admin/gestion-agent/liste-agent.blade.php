@@ -20,6 +20,7 @@
                                 <th class="text-center">Image</th>
                                 <th class="text-center">Name</th>
                                 <th class="text-center">Email</th>
+                                <th class="text-center">Residence</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -30,6 +31,7 @@
                                     <td class="text-center"><img src="{{ $item->image }}" width="50px" alt=""> </td>
                                     <td class="text-center">{{ $item->name }}</td>
                                     <td class="text-center">{{ $item->email }}</td>
+                                    <td class="text-center">{{ $item->residences->name }}</td>
                                     <td class="text-center">
                                         <div class="table-data-feature">
                                             <a class="item" href="{{ route('admin.chefderesidence.edit',$item->id) }}">
